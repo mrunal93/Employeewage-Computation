@@ -3,13 +3,9 @@ import java.io.*;
 class Employeewage {
   	static int Totalsalary=0, TotalHours=0, WagePerHours =20, DayHours =8, parttime=4 ,hours=0, Wage=0 ;
         static Random rand = new Random();
-        //static int int_random = rand.nextInt(3);
 
 
 	 public void employeeComputation() {
-		//int Totalsalary=0, TotalHours=0, WagePerHours =20, DayHours =8, parttime=4 ,hours=0, Wage=0 ;
-        	//Random rand = new Random();
-        	//int int_random = rand.nextInt(3);
 			for(int i=1; i<=20 && TotalHours < 100; i++) {
 			int int_random = rand.nextInt(3);
 			switch(int_random){
@@ -38,11 +34,8 @@ class Employeewage {
 
 	public static void main(String arg[]){
 
-                        //int Totalsalary=0;
-                        //int TotalHours=0;
-                        //int WagePerHours = 20;
-                        //int DayHours = 8;
-                        //int parttime=4;
+			System.out.println("Welcom to Employee Wages Computation");
+
 			Employeewage Emp = new Employeewage();
 
 			Emp.employeeComputation();
