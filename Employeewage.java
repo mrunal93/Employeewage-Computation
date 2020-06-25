@@ -35,7 +35,7 @@ class Employeewage {
 	public static void main(String arg[]){
 
 			System.out.println("Welcom to Employee Wages Computation");
-			System.out.println("Merged Both the UC5 and UC6");
+			
 
 			Employeewage Emp = new Employeewage();
 
