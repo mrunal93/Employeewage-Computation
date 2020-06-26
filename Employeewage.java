@@ -43,9 +43,7 @@ class Employeewage {
 	public static void main(String arg[]){
 
 			System.out.println("Welcom to Employee Wages Computation");
-			//static int[] Companies = new int[8];
-                	//static int[] Companies = {9,5,25,100,8,4,20,75};
-			//String Comp;
+
 			System.out.println("Enter The number of Company:");
 			int a=sc.nextInt();
 			for(int i=0; i<=a; i++){
