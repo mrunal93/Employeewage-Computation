@@ -1,70 +1,76 @@
 import java.util.Random;
 import java.io.*;
+import java.util.*;
+import java.util.Scanner;
 class Employeewage {
-  	static int Totalsalary=0, TotalHours=0, TotalHours1 =0, Wage1=0, hours1=0 ,hours=0, Wage=0,Totalsalary1=0 ;
-        static Random rand = new Random();
+  	static int Totalsalary=0,TotalHours=0,Wage=0,hour=0;
+        static String Company, comp;
+	static Random rand = new Random();
+	static Scanner sc = new Scanner(System.in);
 	//static int[] Companies = new int[8];
-        static int[] Companies = {9,5,25,100,8,4,20,75};
 
-	 public void employeeComputation() {
-			for(int i=1; i<=20 && TotalHours < 100 ; i++) {
+	 public void  employeeComputation(String Company, int empRatePerHr, int numOfWorkingDay, int MaxHoursPerMonth) {
+			int totalWorkingDays = 0;
+			while (TotalHours <= MaxHoursPerMonth && totalWorkingDays < numOfWorkingDay) {
+			totalWorkingDays++;
 			int int_random = rand.nextInt(3);
-			int comp = rand.nextInt(2);
 			switch(int_random){
-                        	case 0:
-                                	//System.out.println("Employee is Present");
-                                	if (comp == 0){
-					//System.out.println("Wages: Rs," +Wage);
-                                	Wage= Companies[0] * Companies[2];
-					hours= Companies[0];
-					}
-					else{
-						Wage1= Companies[4] * Companies[6];
-						hours1=Companies[4];
-					}
-					break;
+			  	case 0:
+                                	System.out.println("Employee is Present");
+                                	Wage=8*empRatePerHr;
+					hour=8;
+					System.out.println("Wages: Rs," +Wage);
+                                	break;
                         	case 1:
-                                	//System.out.println("Employee HalfDay");
-					 if (comp == 1){
-                                        //System.out.println("Wages: Rs," +Wage);
-
-					//System.out.println("Wages: Rs." +Wage);
-                                	 Wage= Companies[1] * Companies[2];
-                                        hours= Companies[1];
-                                        }
-                                        else{
-                                                Wage1= Companies[5] * Companies[6];
-                                                hours1=Companies[5];
-                                        }
-                                        break;
+                                	System.out.println("Employee HalfDay");
+                                	Wage=4*empRatePerHr;
+					hour=4;
+					System.out.println("Wages: Rs." +Wage);
+                                	break;
                         	case 2:
                                 	System.out.println("Employee is Absent");
                                 	break;
 					}
 				 Totalsalary=Totalsalary+(int)Wage;
-				 TotalHours=TotalHours+(int)hours;
-				Totalsalary1=Totalsalary1+(int)Wage1;
-				TotalHours1=TotalHours1+(int)hours1;
+				 TotalHours=TotalHours+(int)hour;
+
 				}
+			System.out.println("Monthly Wages For "+Company + " is : Rs. " +Totalsalary);
+
+			System.out.println("Monthly Hours For "+Company + " is :  " +TotalHours);
 		}
-
-
 
 	public static void main(String arg[]){
 
 			System.out.println("Welcom to Employee Wages Computation");
 			//static int[] Companies = new int[8];
                 	//static int[] Companies = {9,5,25,100,8,4,20,75};
+			//String Comp;
+			System.out.println("Enter The number of Company:");
+			int a=sc.nextInt();
+			for(int i=0; i<=a; i++){
+				System.out.println("Enter The Company name :");
+                        	comp = sc.next();
+				System.out.println("Enter Rate of wages Per Hour :");
+                        	int ewph = sc.nextInt();
 
+				System.out.println("Enter The number of Working Day of Company:");
+                        	int nwd = sc.nextInt();
 
-			Employeewage Emp = new Employeewage();
+				System.out.println("Enter Max Hours Per Month Of company:");
+                        	int hpm = sc.nextInt();
 
-			Emp.employeeComputation();
+			//System.out.println("Enter The Company name :");
+                        //String Comp = sc.nextLine();
 
-			System.out.println("Monthly wages For TCS : RS." +Totalsalary);
-			System.out.println("Number of Hours Employee worked in TCS :" +TotalHours);
-			System.out.println("Monthly wages For Capgemini : RS." +Totalsalary1);
-                        System.out.println("Number of Hours Employee worked in Capgemini :" +TotalHours1);
+				Employeewage Emp = new Employeewage();
 
+				Emp.employeeComputation(comp,ewph,nwd,hpm);
+
+			//System.out.println("Monthly wages For TCS : RS." +Totalsalary);
+			//System.out.println("Number of Hours Employee worked in TCS :" +TotalHours);
+			//System.out.println("Monthly wages For Capgemini : RS." +Totalsalary1);
+                        //System.out.println("Number of Hours Employee worked in Capgemini :" +TotalHours1);
+			}
 	}
 }
