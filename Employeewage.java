@@ -6,9 +6,8 @@ class Employeewage {
 	//static int[] Companies = new int[8];
         static int[] Companies = {9,5,25,100,8,4,20,75};
 
-	
 	 public void employeeComputation() {
-			for(int i=1; i<=20 && TotalHours < 100; i++) {
+			for(int i=1; i<=20 && TotalHours < 100 ; i++) {
 			int int_random = rand.nextInt(3);
 			int comp = rand.nextInt(2);
 			switch(int_random){
