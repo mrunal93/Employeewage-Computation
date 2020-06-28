@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Random;
 import java.io.*;
 import java.util.*;
@@ -42,11 +43,20 @@ class Employeewage {
 			System.out.println("Monthly Hours For "+Company + " is :  " +totalHours);
 		}
 
+//	public static void hash(String[] args){
+//		HashMap<String,int> companyEmployee = new HashMap<String,int>();
+
+
+
+//}
+
+
 	public static void main(String arg[]){
 
 			System.out.println("Welcom to Employee Wages Computation");
 
 			System.out.println("Enter The number of Company:");
+			HashMap<String,Integer> companyEmployee = new HashMap<String,Integer>();
 			int a=sc.nextInt();
 			for(int i=1; i<=a; i++){
 				System.out.println("Enter The Company name :");
@@ -66,11 +76,20 @@ class Employeewage {
 				Employeewage Emp = new Employeewage();
 
 				Emp.employeeComputation(comp,ewph,nwd,hpm);
+				companyEmployee.put((String)comp ,(int)totalsalary);
 
 			//System.out.println("Monthly wages For TCS : RS." +Totalsalary);
 			//System.out.println("Number of Hours Employee worked in TCS :" +TotalHours);
 			//System.out.println("Monthly wages For Capgemini : RS." +Totalsalary1);
-                        //System.out.println("Number of Hours Employee worked in Capgemini :" +TotalHours1);
+
+                        //System.out.println("Number of Hours Employee worked in Capgemini :" +TotalHours1);			
+		}
+			for (String j : companyEmployee.keySet()){
+
+			System.out.println("==Company Name : " +j + " ===Total Salary: Rs." +companyEmployee.get(j));
 			}
+
 	}
+
+
 }
