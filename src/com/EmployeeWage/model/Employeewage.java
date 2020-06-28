@@ -3,41 +3,43 @@ import java.io.*;
 import java.util.*;
 import java.util.Scanner;
 class Employeewage {
-  	static int Totalsalary=0,TotalHours=0,Wage=0,hour=0;
-        static String Company, comp;
+  	static int totalsalary=0,totalHours=0,wage=0,hour=0;
+        
+	static String Company, comp;
 	static Random rand = new Random();
 	static Scanner sc = new Scanner(System.in);
 	//static int[] Companies = new int[8];
 
 	 public void  employeeComputation(String Company, int empRatePerHr, int numOfWorkingDay, int MaxHoursPerMonth) {
 			int totalWorkingDays = 0;
-			while (TotalHours <= MaxHoursPerMonth && totalWorkingDays < numOfWorkingDay) {
+			while (totalHours <= MaxHoursPerMonth && totalWorkingDays < numOfWorkingDay) {
 			totalWorkingDays++;
 			int int_random = rand.nextInt(3);
 			switch(int_random){
 			  	case 0:
-                                	System.out.println("Employee is Present");
-                                	Wage=8*empRatePerHr;
+                                	//System.out.println("Employee is Present");
+                                	wage=8*empRatePerHr;
 					hour=8;
-					System.out.println("Wages: Rs," +Wage);
+					//System.out.println("Wages: Rs," +Wage);
                                 	break;
                         	case 1:
-                                	System.out.println("Employee HalfDay");
-                                	Wage=4*empRatePerHr;
+                                	//System.out.println("Employee HalfDay");
+                                	wage=4*empRatePerHr;
 					hour=4;
-					System.out.println("Wages: Rs." +Wage);
+					//System.out.println("Wages: Rs." +Wage);
                                 	break;
-                        	case 2:
-                                	System.out.println("Employee is Absent");
-                                	break;
+                        	default:
+                                	//System.out.println("Employee is Absent");
+                                	hour=0;
+					break;
 					}
-				 Totalsalary=Totalsalary+(int)Wage;
-				 TotalHours=TotalHours+(int)hour;
+				 totalsalary+=(int)wage;
+				 totalHours+=(int)hour;
 
 				}
-			System.out.println("Monthly Wages For "+Company + " is : Rs. " +Totalsalary);
+			System.out.println("Monthly Wages For "+Company + " is : Rs. " +totalsalary);
 
-			System.out.println("Monthly Hours For "+Company + " is :  " +TotalHours);
+			System.out.println("Monthly Hours For "+Company + " is :  " +totalHours);
 		}
 
 	public static void main(String arg[]){
@@ -46,7 +48,7 @@ class Employeewage {
 
 			System.out.println("Enter The number of Company:");
 			int a=sc.nextInt();
-			for(int i=0; i<=a; i++){
+			for(int i=1; i<=a; i++){
 				System.out.println("Enter The Company name :");
                         	comp = sc.next();
 				System.out.println("Enter Rate of wages Per Hour :");
