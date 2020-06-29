@@ -1,14 +1,14 @@
+package com.employeewage.model;
 import java.util.HashMap;
 import java.util.Random;
 import java.io.*;
 import java.util.*;
 import java.util.Scanner;
-class Employeewage {
+public class Employeewage {
   	static int totalsalary=0,totalHours=0,wage=0,hour=0;
-        
 	static String Company, comp;
 	static Random rand = new Random();
-	static Scanner sc = new Scanner(System.in);
+//	static Scanner sc = new Scanner(System.in);
 	//static int[] Companies = new int[8];
 
 	 public void  employeeComputation(String Company, int empRatePerHr, int numOfWorkingDay, int MaxHoursPerMonth) {
@@ -51,45 +51,40 @@ class Employeewage {
 //}
 
 
-	public static void main(String arg[]){
+//	public static void main(String arg[]){
 
-			System.out.println("Welcom to Employee Wages Computation");
+//			System.out.println("Welcom to Employee Wages Computation");
 
-			System.out.println("Enter The number of Company:");
-			HashMap<String,Integer> companyEmployee = new HashMap<String,Integer>();
-			int a=sc.nextInt();
-			for(int i=1; i<=a; i++){
-				System.out.println("Enter The Company name :");
-                        	comp = sc.next();
-				System.out.println("Enter Rate of wages Per Hour :");
-                        	int ewph = sc.nextInt();
+//			System.out.println("Enter The number of Company:");
+//			HashMap<String,Integer> companyEmployee = new HashMap<String,Integer>();
+//			int a=sc.nextInt();
+//			for(int i=1; i<=a; i++){
+//				System.out.println("Enter The Company name :");
+  //                      	comp = sc.next();
+//				System.out.println("Enter Rate of wages Per Hour :");
+  //                      	int ewph = sc.nextInt();
 
-				System.out.println("Enter The number of Working Day of Company:");
-                        	int nwd = sc.nextInt();
+//				System.out.println("Enter The number of Working Day of Company:");
+  //                      	int nwd = sc.nextInt();
 
-				System.out.println("Enter Max Hours Per Month Of company:");
-                        	int hpm = sc.nextInt();
+//				System.out.println("Enter Max Hours Per Month Of company:");
+    //                    	int hpm = sc.nextInt();
 
 			//System.out.println("Enter The Company name :");
                         //String Comp = sc.nextLine();
 
-				Employeewage Emp = new Employeewage();
+//				Employeewage Emp = new Employeewage();
 
-				Emp.employeeComputation(comp,ewph,nwd,hpm);
-				companyEmployee.put((String)comp ,(int)totalsalary);
+//				Emp.employeeComputation(comp,ewph,nwd,hpm);
+//				companyEmployee.put((String)comp ,(int)totalsalary);
 
-			//System.out.println("Monthly wages For TCS : RS." +Totalsalary);
-			//System.out.println("Number of Hours Employee worked in TCS :" +TotalHours);
-			//System.out.println("Monthly wages For Capgemini : RS." +Totalsalary1);
+//		}
+//			for (String j : companyEmployee.keySet()){
 
-                        //System.out.println("Number of Hours Employee worked in Capgemini :" +TotalHours1);			
-		}
-			for (String j : companyEmployee.keySet()){
-
-			System.out.println("==Company Name : " +j + " ===Total Salary: Rs." +companyEmployee.get(j));
-			}
-
-	}
+//			System.out.println("==Company Name : " +j + " ===Total Salary: Rs." +companyEmployee.get(j));
+//			}
+//
+//	}
 
 
 }

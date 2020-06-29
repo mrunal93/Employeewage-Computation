@@ -1,42 +1,51 @@
-package com.EmployeeWage.service;
-
+package com.employeewage.service;
 import com.employeewage.model.Employeewage;
 
-public class EmployeeService{
+import java.util.HashMap;
+import java.util.*;
+import java.io.*;
+class EmployeeService{
 
-	static int a , ewph ,nwd, hpm;
-	static String comp;
-		public static void main(String arg[]){
+	//int a , ewph ,nwd, hpm;
+	 //String comp;
+		  public static void main(String arg[]){
+			 int a , ewph ,nwd, hpm;
+		         String comp;
 
-                        System.out.println("Welcom to Employee Wages Computation");
+			int totalsalary=0, totalHours=0;
+                        Scanner sc = new Scanner(System.in);
+			System.out.println("Welcom to Employee Wages Computation");
 
-                        System.out.println("Enter The number of Company:");
-                        int a=sc.nextInt();
-                        for(int i=1; i<=a; i++){
-                                System.out.println("Enter The Company name :");
-                                comp = sc.next();
-                                System.out.println("Enter Rate of wages Per Hour :");
-                                int ewph = sc.nextInt();
+                      System.out.println("Enter The number of Company:");
+                      HashMap<String,Integer> companyEmployee = new HashMap<String,Integer>();
+                       a=sc.nextInt();
+                      for(int i=1; i<=a; i++){
+                              System.out.println("Enter The Company name :");
+                              comp = sc.next();
+                              System.out.println("Enter Rate of wages Per Hour :");
+                              ewph = sc.nextInt();
 
-                                System.out.println("Enter The number of Working Day of Company:");
-                                int nwd = sc.nextInt();
+                              System.out.println("Enter The number of Working Day of Company:");
+                              nwd = sc.nextInt();
 
-                                System.out.println("Enter Max Hours Per Month Of company:");
-                                int hpm = sc.nextInt();
+                            System.out.println("Enter Max Hours Per Month Of company:");
+                            hpm = sc.nextInt();
 
-                        //System.out.println("Enter The Company name :");
-                        //String Comp = sc.nextLine();
+                        System.out.println("Enter The Company name :");
+                        String Comp = sc.nextLine();
 
-                                Employeewage Emp = new Employeewage();
+                              Employeewage Emp = new Employeewage();
 
-                                Emp.employeeComputation(comp,ewph,nwd,hpm);
+                              Emp.employeeComputation(comp,ewph,nwd,hpm);
+                              companyEmployee.put((String)comp ,(int)totalsalary);
 
-                        //System.out.println("Monthly wages For TCS : RS." +Totalsalary);
-                        //System.out.println("Number of Hours Employee worked in TCS :" +TotalHours);
-                        //System.out.println("Monthly wages For Capgemini : RS." +Totalsalary1);
-                        //System.out.println("Number of Hours Employee worked in Capgemini :" +TotalHours1);
-                        }
-        }
+              }
+                      for (String j : companyEmployee.keySet()){
+
+                      System.out.println("==Company Name : " +j + " ===Total Salary: Rs." +companyEmployee.get(j));
+		 }
+      }
+
 
 
 
